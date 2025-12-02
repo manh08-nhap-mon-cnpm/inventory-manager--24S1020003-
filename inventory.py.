@@ -1,13 +1,33 @@
+# ============================
+# QUẢN LÝ KHO HÀNG - PROCEDURAL
+# ============================
+
 # Danh sách lưu sản phẩm
+# Mỗi sản phẩm là dict {'name': '...', 'price': ..., 'qty': ...}
 products = []
 
 def add_product():
-    pass  # Chưa viết logic
+    """Nhập sản phẩm mới và lưu vào danh sách."""
+    print("\n--- NHẬP HÀNG ---")
+    name = input("Tên sản phẩm: ")
+    price = int(input("Giá bán: "))
+    quantity = int(input("Số lượng nhập: "))
+
+    product = {
+        'name': name,
+        'price': price,
+        'qty': quantity
+    }
+
+    products.append(product)
+    print("✅ Đã nhập hàng thành công!")
 
 def view_inventory():
+    """In toàn bộ sản phẩm trong kho."""
     pass  # Chưa viết logic
 
 def check_low_stock():
+    """Kiểm tra sản phẩm có số lượng < 5."""
     pass  # Chưa viết logic
 
 def main():
@@ -30,7 +50,7 @@ def main():
             print("Kết thúc chương trình.")
             break
         else:
-            print("Lựa chọn không hợp lệ.")
+            print("❌ Lựa chọn không hợp lệ, vui lòng thử lại.")
 
 if __name__ == "__main__":
     main()
