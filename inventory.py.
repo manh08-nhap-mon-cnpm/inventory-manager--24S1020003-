@@ -1,7 +1,12 @@
+# ============================
+# QUẢN LÝ KHO HÀNG - PROCEDURAL
+# ============================
+
+# Danh sách lưu sản phẩm
 products = []
 
 def add_product():
-def add_product():
+    """Nhập sản phẩm mới và lưu vào danh sách."""
     print("\n--- NHẬP HÀNG ---")
     name = input("Tên sản phẩm: ")
     price = int(input("Giá bán: "))
@@ -15,11 +20,26 @@ def add_product():
 
     products.append(product)
     print("✅ Đã nhập hàng thành công!")
+
 def view_inventory():
-    pass  # Chưa viết
+    """In toàn bộ sản phẩm trong kho."""
+    print("\n--- TỒN KHO HIỆN TẠI ---")
+    if not products:
+        print("Kho hiện đang trống!")
+        return
+    for p in products:
+        print(f"- {p['name']} | Giá: {p['price']} | SL: {p['qty']}")
 
 def check_low_stock():
-    pass  # Chưa viết
+    """Kiểm tra sản phẩm có số lượng < 5."""
+    print("\n--- CẢNH BÁO HẾT HÀNG ---")
+    found = False
+    for p in products:
+        if p['qty'] < 5:
+            found = True
+            print(f"⚠️  {p['name']} sắp hết hàng (SL: {p['qty']})")
+    if not found:
+        print("✔ Không có sản phẩm nào sắp hết hàng.")
 
 def main():
     while True:
@@ -41,7 +61,8 @@ def main():
             print("Kết thúc chương trình.")
             break
         else:
-            print("Lựa chọn không hợp lệ.")
+            print("❌ Lựa chọn không hợp lệ, vui lòng thử lại.")
 
 if __name__ == "__main__":
     main()
+
