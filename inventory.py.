@@ -1,6 +1,6 @@
-# Danh sách lưu sản phẩm
 products = []
 
+def add_product():
 def add_product():
     print("\n--- NHẬP HÀNG ---")
     name = input("Tên sản phẩm: ")
@@ -15,13 +15,11 @@ def add_product():
 
     products.append(product)
     print("✅ Đã nhập hàng thành công!")
-
-
 def view_inventory():
-    pass  # Chưa viết logic
+    pass  # Chưa viết
 
 def check_low_stock():
-    pass  # Chưa viết logic
+    pass  # Chưa viết
 
 def main():
     while True:
